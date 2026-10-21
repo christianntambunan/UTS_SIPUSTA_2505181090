@@ -1,0 +1,8 @@
+KODE    | JUDUL                              | JENIS         | THN  | STATUS      | LOKASI ARSIP                | KETERANGAN
+-------------------------------------------------------------------------------------------------------------------------------------
+MJ-002  | Info Teknologi Edisi 87            | Majalah       | 2026 | Layak       | Rak A-06 (Lantai 1)         | Edisi 87, terbit Juli (bukan edisi terbaru)
+BK-001  | Java How to Program                | BukuCetak     | 2022 | Layak       | Rak A-12 (Lantai 1)         | 620 halaman, siap dipinjam
+BD-002  | Jurnal Rekayasa Perangkat          | BerkasDigital | 2025 | Layak       | Tidak ada (koleksi digital) | 8 MB, unduh.polmed.ac.id/bd002
+BD-001  | Panduan Pemrograman Java           | BerkasDigital | 2024 | Layak       | Tidak ada (koleksi digital) | 15 MB, unduh.polmed.ac.id/bd001
+BK-002  | Basis Data Relasional              | BukuCetak     | 2021 | Tidak layak | Rak B-04 (Lantai 1)         | 410 halaman, sedang diperbaiki
+MJ-001  | Info Teknologi Edisi 88            | Majalah       | 2026 | Tidak layak | Rak A-05 (Lantai 1)         | Edisi 88, terbit Agustus (edisi terbaru)

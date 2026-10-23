@@ -1,8 +1,7 @@
 package eksepsi;
 
 public class KoleksiTidakLayakException extends PustakaException {
-
-    public KoleksiTidakLayakException(String pesan) {
-        super(pesan);
+    public KoleksiTidakLayakException(String pesanError) {
+        super(pesanError);
     }
 }

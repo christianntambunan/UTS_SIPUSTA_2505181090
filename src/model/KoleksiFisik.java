@@ -1,30 +1,26 @@
 package model;
 
 public abstract class KoleksiFisik extends Koleksi implements Terarsip {
-    private String nomorRak;
+    private String noRak;
 
     public KoleksiFisik(String kode, String judul, int tahunTerbit, String nomorRak) {
         super(kode, judul, tahunTerbit);
-        this.nomorRak = nomorRak;
+        this.noRak = nomorRak;
     }
 
     @Override
     public String nomorRak() {
-        return nomorRak;
+        return noRak;
     }
 
     @Override
     public String lokasiLantai() {
-        if (nomorRak == null || nomorRak.isEmpty()) {
+        if (noRak == null || noRak.isBlank()) {
             return "Lantai belum ditentukan";
         }
-        char awal = Character.toUpperCase(nomorRak.charAt(0));
-        if (awal >= 'A' && awal <= 'C') {
-            return "Lantai 1";
-        }
-        if (awal >= 'D' && awal <= 'F') {
-            return "Lantai 2";
-        }
+        char hurufAwal = Character.toUpperCase(noRak.charAt(0));
+        if (hurufAwal >= 'A' && hurufAwal <= 'C') return "Lantai 1";
+        if (hurufAwal >= 'D' && hurufAwal <= 'F') return "Lantai 2";
         return "Lantai 3";
     }
 

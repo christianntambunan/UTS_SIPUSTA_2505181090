@@ -8,27 +8,29 @@ import java.util.List;
 
 public class EksporKatalog {
     
-    public void ekspor(List<Koleksi> daftarKoleksi) {
-        try (PrintWriter penulis = new PrintWriter(new FileWriter("katalog.txt"))) {
+    public void ekspor(List<Koleksi> dataKoleksi) {
+        try (PrintWriter out = new PrintWriter(new FileWriter("katalog.txt"))) {
             
-            penulis.printf("%-7s | %-34s | %-13s | %-4s | %-11s | %-27s | %s%n",
+            String header = String.format("%-7s | %-34s | %-13s | %-4s | %-11s | %-27s | %s",
                     "KODE", "JUDUL", "JENIS", "THN", "STATUS", "LOKASI ARSIP", "KETERANGAN");
-            penulis.println("-------------------------------------------------------------------------------------------------------------------------------------");
+            out.println(header);
+            out.println("-------------------------------------------------------------------------------------------------------------------------------------");
 
-            for (Koleksi k : daftarKoleksi) {
-                penulis.printf("%-7s | %-34s | %-13s | %-4d | %-11s | %-27s | %s%n",
-                        k.getKode(),
-                        k.getJudul(),
-                        k.jenisKoleksi(),
-                        k.getTahunTerbit(),
-                        k.isLayakDipinjam() ? "Layak" : "Tidak layak",
-                        k.lokasiArsip(),
-                        k.keterangan());
+            for (Koleksi item : dataKoleksi) {
+                String statusStr = item.isLayakDipinjam() ? "Layak" : "Tidak layak";
+                out.printf("%-7s | %-34s | %-13s | %-4d | %-11s | %-27s | %s%n",
+                        item.getKode(),
+                        item.getJudul(),
+                        item.jenisKoleksi(),
+                        item.getTahunTerbit(),
+                        statusStr,
+                        item.lokasiArsip(),
+                        item.keterangan());
             }
             System.out.println("Katalog berhasil diekspor ke berkas \"katalog.txt\".");
             
-        } catch (IOException e) {
-            System.out.println("Gagal mengekspor katalog: " + e.getMessage());
+        } catch (IOException ex) {
+            System.out.println("Gagal mengekspor katalog: " + ex.getMessage());
         }
     }
 }

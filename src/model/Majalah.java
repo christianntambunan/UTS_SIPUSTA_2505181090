@@ -1,26 +1,22 @@
 package model;
 
 public class Majalah extends KoleksiFisik {
-    private int edisi;
-    private String bulanTerbit;
-    private boolean edisiTerbaru;
+    private int noEdisi;
+    private String blnTerbit;
+    private boolean statusTerbaru;
 
     public Majalah(String kode, String judul, int tahunTerbit, int edisi, String bulanTerbit, String nomorRak, boolean edisiTerbaru) {
         super(kode, judul, tahunTerbit, nomorRak);
-        this.edisi = edisi;
-        this.bulanTerbit = bulanTerbit;
-        this.edisiTerbaru = edisiTerbaru;
+        this.noEdisi = edisi;
+        this.blnTerbit = bulanTerbit;
+        this.statusTerbaru = edisiTerbaru;
     }
 
     @Override
-    public String jenisKoleksi() {
-        return "Majalah";
-    }
+    public String jenisKoleksi() { return "Majalah"; }
 
     @Override
-    public boolean isLayakDipinjam() {
-        return !edisiTerbaru;
-    }
+    public boolean isLayakDipinjam() { return !statusTerbaru; }
 
     @Override
     public String alasanTidakLayak() {
@@ -29,12 +25,13 @@ public class Majalah extends KoleksiFisik {
 
     @Override
     public String keterangan() {
-        return "Edisi " + edisi + ", terbit " + bulanTerbit + (edisiTerbaru ? " (edisi terbaru)" : " (bukan edisi terbaru)");
+        String infoEdisi = statusTerbaru ? "(edisi terbaru)" : "(bukan edisi terbaru)";
+        return "Edisi " + noEdisi + ", terbit " + blnTerbit + " " + infoEdisi;
     }
 
     @Override
     public String deskripsi() {
-        return super.deskripsi() + " | Edisi " + edisi + " (" + bulanTerbit + ") | " 
-                + (edisiTerbaru ? "edisi terbaru" : "bukan edisi terbaru");
+        String infoEdisi = statusTerbaru ? "edisi terbaru" : "bukan edisi terbaru";
+        return super.deskripsi() + " | Edisi " + noEdisi + " (" + blnTerbit + ") | " + infoEdisi;
     }
 }

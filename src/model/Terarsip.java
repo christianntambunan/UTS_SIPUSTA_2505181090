@@ -5,6 +5,6 @@ public interface Terarsip {
     String lokasiLantai();
     
     default String ringkasanArsip() {
-        return "Rak " + nomorRak() + " (" + lokasiLantai() + ")";
+        return String.format("Rak %s (%s)", nomorRak(), lokasiLantai());
     }
 }

@@ -1,7 +1,7 @@
 package eksepsi;
 
 public class KoleksiSedangDipinjamException extends PustakaException {
-    public KoleksiSedangDipinjamException(String pesan) {
-        super(pesan);
+    public KoleksiSedangDipinjamException(String pesanError) {
+        super(pesanError);
     }
 }
